@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GS HD APK İndir</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+  color:white;
+  background:
+    radial-gradient(circle at top,#ffcc00 0,#8b0000 32%,#080000 78%);
+}
+.wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+}
+.card{
+  width:100%;
+  max-width:450px;
+  background:rgba(0,0,0,.78);
+  border:1px solid rgba(255,204,0,.35);
+  border-radius:32px;
+  padding:28px;
+  text-align:center;
+  box-shadow:0 0 45px rgba(255,204,0,.35);
+}
+.logo{
+  width:105px;
+  height:105px;
+  margin:0 auto 16px;
+  border-radius:28px;
+  background:linear-gradient(135deg,#ffcc00,#d60000);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:36px;
+  font-weight:900;
+  color:white;
+}
+.badge{
+  display:inline-block;
+  padding:7px 14px;
+  border-radius:999px;
+  background:rgba(255,204,0,.15);
+  color:#ffcc00;
+  font-size:13px;
+  margin-bottom:10px;
+}
+h1{margin:8px 0;color:#ffcc00}
+p{color:#eee;line-height:1.5}
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:22px 0;
+}
+.features div{
+  background:rgba(255,255,255,.08);
+  padding:13px 6px;
+  border-radius:16px;
+  font-size:13px;
+}
+.btn{
+  width:100%;
+  border:0;
+  padding:18px;
+  border-radius:20px;
+  font-size:20px;
+  font-weight:900;
+  color:white;
+  background:linear-gradient(90deg,#ffcc00,#d60000);
+  cursor:pointer;
+}
+.btn:active{transform:scale(.97)}
+#countdown{
+  margin-top:18px;
+  font-size:25px;
+  color:#ffcc00;
+  font-weight:900;
+}
+.note{font-size:12px;color:#bbb;margin-top:18px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card">
+    <div class="logo">GS</div>
+    <div class="badge">Son Sürüm APK</div>
+
+    <h1>GS HD APK İndir</h1>
+    <p>Android cihazınız için uygulamayı hızlı ve kolay şekilde indirin.</p>
+
+    <div class="features">
+      <div>📱 Android</div>
+      <div>⚡ Hızlı</div>
+      <div>🆕 v9</div>
+    </div>
+
+    <button class="btn" onclick="startDownload()">APK İNDİR</button>
+    <div id="countdown"></div>
+
+    <p class="note">Butona basınca 10 saniye sonra indirme otomatik başlar.</p>
+  </div>
+</div>
+
+<script>
+const apkLink = "https://github.com/GSHDapk/GSHD/releases/download/Spor/GS.HD_v9.apk";
+
+function startDownload(){
+  let time = 10;
+  const countdown = document.getElementById("countdown");
+
+  countdown.innerHTML = time + " saniye";
+
+  const timer = setInterval(() => {
+    time--;
+    countdown.innerHTML = time + " saniye";
+
+    if(time <= 0){
+      clearInterval(timer);
+      countdown.innerHTML = "İndirme başlıyor...";
+
+      const a = document.createElement("a");
+      a.href = apkLink;
+      a.download = "GS_HD_v9.apk";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  },1000);
+}
+</script>
+
+</body>
+</html>
